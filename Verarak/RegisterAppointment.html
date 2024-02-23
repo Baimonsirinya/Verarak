@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="navbar_admin.css">
+    <link rel="stylesheet" href="RegisterAppointment.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Veraruk</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">หน้าหลัก</a></li>
+                <li><a href="admin_Drugstorage.php">เกี่ยวกับเรา</a></li>
+                <li><a href="#">นัดหมาย</a></li>
+                <li><a href="admin_medrecords.php">ติดต่อเรา</a></li>
+                <li><a href="#">User + </a>
+                  <ul>
+                    <li><a href="#">ข้อมูล</a></li>
+                    <li><a href="#">Logout</a></li>
+                  </ul>
+              </li>
+            </ul>
+    </header>
+    <div class="imageposition">
+        <img src="images/01.jpg" width="350" height="300" >
+    </div>
+    <div class="card">
+      <div class="card-header">นัดหมายและพบแพทย์</div>
+      <form class="container-ID">
+            <p id="font-ID">วันที่ทำการนัดหมาย :
+                <input class="textbox" type="date" id="text-box" placeholder="#" style="width: 100px;"></br>
+            </p>
+            <p id="font-ID">เวลานัดหมาย :
+                <input class="textbox" type="time" id="text-box" placeholder="#" style="width: 200px;"></br>
+            </p>
+            <p id="font-ID">ชื่อ-สกุล :
+                <input class="textbox" type="text" id="text-box" placeholder="#" style="width: 300px;"></br>
+            </p>
+            <p id="font-ID">เบอร์โทร :
+                <input class="textbox" type="tel" id="text-box" placeholder="#" style="width: 300px;"></br>
+            </p>
+            <p id="font-ID">อีเมล :
+                <input class="textbox" type="email" id="text-box" placeholder="#" style="width: 300px;"></br>
+            </p>
+            <p id="font-ID">ระบุแพทย์ :
+                <input class="textbox" type="text" id="text-box" placeholder="#" style="width: 300px"></br>
+            </p>
+            <button class="button-submit">นัดหมาย</button><br><br>
+        </form>
+    </div>
+
+</body>
+</html>  
