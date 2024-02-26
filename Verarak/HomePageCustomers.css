@@ -27,8 +27,7 @@ html,body{
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin: 20px;
-    
-  }
+}
   
 .square:hover {
       -webkit-transform: translate(20px, -10px);
@@ -36,7 +35,7 @@ html,body{
       transform: translate(10px, -10px);
       -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-       }
+}
   
 .square{
     width: 460px;
