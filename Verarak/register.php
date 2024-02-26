@@ -65,38 +65,35 @@
 
       <script>
         document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("registrationForm").addEventListener("submit", function(event) {
-        event.preventDefault();
+            document.getElementById("registrationForm").addEventListener("submit", function(event) {
+                event.preventDefault();
 
-        var password = document.getElementById("password").value;
-        var confirm_password = document.getElementById("confirm_password").value;
+                var password = document.getElementById("password").value;
+                var confirm_password = document.getElementById("confirm_password").value;
 
-        if (password !== confirm_password) {
-            alert("รหัสผ่านและยืนยันรหัสผ่านไม่ตรงกัน");
-            return;
-        }
-
-        var formData = new FormData(this);
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "AddRegister.php", true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    if (xhr.responseText === 'มีชื่อผู้ใช้งานนี้อยู่ในระบบแล้ว') {
-                        document.getElementById('username').classList.add('invalid');
-                        alert(xhr.responseText);
-                    } else {
-                        alert(xhr.responseText);
-                    }
-                } else {
-                    alert("มีข้อผิดพลาดในการส่งข้อมูล");
+                // ตรวจสอบว่ารหัสผ่านและยืนยันรหัสผ่านตรงกันหรือไม่
+                if (password !== confirm_password) {
+                    alert("รหัสผ่านและยืนยันรหัสผ่านไม่ตรงกัน");
+                    return;
                 }
-            }
-        };
-        xhr.send(formData);
-    });
-});
+
+                // ถ้ารหัสผ่านตรงกัน ให้ทำการส่งข้อมูลไปยังไฟล์ PHP ตรวจสอบและบันทึกข้อมูล
+                var formData = new FormData(this); // สร้าง FormData object จากแบบฟอร์ม
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "AddRegister.php", true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            alert(xhr.responseText); // แสดงข้อความที่ได้รับจากไฟล์ PHP ผ่านการแจ้งเตือน
+                        } else {
+                            alert("มีข้อผิดพลาดในการส่งข้อมูล");
+                        }
+                    }
+                };
+                xhr.send(formData); // ส่งข้อมูล FormData ไปยังไฟล์ PHP
+            });
+        });
     </script>
       
 </body>

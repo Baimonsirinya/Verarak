@@ -16,7 +16,7 @@ $stmt_check->bindParam(':username', $username);
 $stmt_check->execute();
 
 if ($stmt_check->rowCount() > 0) {
-    echo "มีชื่อผู้ใช้งานนี้อยู่ในระบบแล้ว";
+    echo "ขออภัย ชื่อผู้ใช้นี้มีอยู่ในระบบแล้ว";
     exit();
 }
 
